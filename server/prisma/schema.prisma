@@ -17,3 +17,20 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Product {
+  createdAt      DateTime     @default(now())
+  id             String       @id @default(cuid())
+  manufacturer   Manufacturer @relation(fields: [manufacturerId], references: [id])
+  manufacturerId String
+  name           String?
+  updatedAt      DateTime     @updatedAt
+}
+
+model Manufacturer {
+  createdAt DateTime  @default(now())
+  id        String    @id @default(cuid())
+  name      String?
+  products  Product[]
+  updatedAt DateTime  @updatedAt
+}
