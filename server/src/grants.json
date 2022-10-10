@@ -232,5 +232,905 @@
     "resource": "Manufacturer",
     "action": "read:any",
     "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Warehouse",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Warehouse",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Warehouse",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Warehouse",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Warehouse",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Warehouse",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Warehouse",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Warehouse",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Warehouse",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Warehouse",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Warehouse",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Warehouse",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Warehouse",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Warehouse",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Warehouse",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Jobsite",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Jobsite",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Jobsite",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Jobsite",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Jobsite",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Jobsite",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Jobsite",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Jobsite",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Jobsite",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Jobsite",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Jobsite",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Jobsite",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Jobsite",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Jobsite",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Jobsite",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supplier",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supplier",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supplier",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supplier",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supplier",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supplier",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supplier",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supplier",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supplier",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supplier",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supplier",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supplier",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supplier",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supplier",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supplier",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Order",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Order",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Order",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Order",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Order",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Order",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Order",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Order",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Order",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Order",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Order",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductStock",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductStock",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductStock",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductStock",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductStock",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductStock",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductStock",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductStock",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductStock",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductStock",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductStock",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductStock",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductStock",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductStock",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductStock",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductOrder",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductOrder",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductOrder",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductOrder",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductOrder",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductOrder",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductOrder",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductOrder",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductOrder",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductOrder",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductOrder",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductOrder",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductOrder",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductOrder",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductOrder",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "OrderTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "OrderTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "OrderTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "OrderTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "OrderTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "OrderTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "OrderTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "OrderTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "OrderTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "OrderTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "OrderTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "OrderTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "OrderTrack",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "OrderTrack",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "OrderTrack",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "Supply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "Supply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "Supply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductSupply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductSupply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductSupply",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductSupply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductSupply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductSupply",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductSupply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductSupply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductSupply",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductSupply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductSupply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductSupply",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "ProductSupply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "ProductSupply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "ProductSupply",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "SupplyTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "SupplyTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "SupplyTrack",
+    "action": "read:own",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "SupplyTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "SupplyTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "SupplyTrack",
+    "action": "create:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "SupplyTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "SupplyTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "SupplyTrack",
+    "action": "update:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "SupplyTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "SupplyTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "SupplyTrack",
+    "action": "delete:any",
+    "attributes": "*"
+  },
+  {
+    "role": "projectAdmin",
+    "resource": "SupplyTrack",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "admin",
+    "resource": "SupplyTrack",
+    "action": "read:any",
+    "attributes": "*"
+  },
+  {
+    "role": "user",
+    "resource": "SupplyTrack",
+    "action": "read:any",
+    "attributes": "*"
   }
 ]

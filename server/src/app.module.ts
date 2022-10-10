@@ -4,6 +4,16 @@ import { MorganInterceptor, MorganModule } from "nest-morgan";
 import { UserModule } from "./user/user.module";
 import { ProductModule } from "./product/product.module";
 import { ManufacturerModule } from "./manufacturer/manufacturer.module";
+import { WarehouseModule } from "./warehouse/warehouse.module";
+import { JobsiteModule } from "./jobsite/jobsite.module";
+import { SupplierModule } from "./supplier/supplier.module";
+import { OrderModule } from "./order/order.module";
+import { ProductStockModule } from "./productStock/productStock.module";
+import { ProductOrderModule } from "./productOrder/productOrder.module";
+import { OrderTrackModule } from "./orderTrack/orderTrack.module";
+import { SupplyModule } from "./supply/supply.module";
+import { ProductSupplyModule } from "./productSupply/productSupply.module";
+import { SupplyTrackModule } from "./supplyTrack/supplyTrack.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { HealthModule } from "./health/health.module";
@@ -19,6 +29,16 @@ import { GraphQLModule } from "@nestjs/graphql";
     UserModule,
     ProductModule,
     ManufacturerModule,
+    WarehouseModule,
+    JobsiteModule,
+    SupplierModule,
+    OrderModule,
+    ProductStockModule,
+    ProductOrderModule,
+    OrderTrackModule,
+    SupplyModule,
+    ProductSupplyModule,
+    SupplyTrackModule,
     ACLModule,
     AuthModule,
     HealthModule,

@@ -14,6 +14,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { ManufacturerWhereUniqueInput } from "../../manufacturer/base/ManufacturerWhereUniqueInput";
 import { ValidateNested, IsString, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
+import { ProductOrderCreateNestedManyWithoutProductsInput } from "./ProductOrderCreateNestedManyWithoutProductsInput";
+import { ProductStockCreateNestedManyWithoutProductsInput } from "./ProductStockCreateNestedManyWithoutProductsInput";
+import { ProductSupplyCreateNestedManyWithoutProductsInput } from "./ProductSupplyCreateNestedManyWithoutProductsInput";
 @InputType()
 class ProductCreateInput {
   @ApiProperty({
@@ -35,5 +38,41 @@ class ProductCreateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductOrderCreateNestedManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductOrderCreateNestedManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductOrderCreateNestedManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productOrders?: ProductOrderCreateNestedManyWithoutProductsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductStockCreateNestedManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductStockCreateNestedManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductStockCreateNestedManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productStocks?: ProductStockCreateNestedManyWithoutProductsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductSupplyCreateNestedManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductSupplyCreateNestedManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductSupplyCreateNestedManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productSupplies?: ProductSupplyCreateNestedManyWithoutProductsInput;
 }
 export { ProductCreateInput };

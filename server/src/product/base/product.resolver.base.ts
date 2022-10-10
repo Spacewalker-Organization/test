@@ -25,6 +25,12 @@ import { DeleteProductArgs } from "./DeleteProductArgs";
 import { ProductFindManyArgs } from "./ProductFindManyArgs";
 import { ProductFindUniqueArgs } from "./ProductFindUniqueArgs";
 import { Product } from "./Product";
+import { ProductOrderFindManyArgs } from "../../productOrder/base/ProductOrderFindManyArgs";
+import { ProductOrder } from "../../productOrder/base/ProductOrder";
+import { ProductStockFindManyArgs } from "../../productStock/base/ProductStockFindManyArgs";
+import { ProductStock } from "../../productStock/base/ProductStock";
+import { ProductSupplyFindManyArgs } from "../../productSupply/base/ProductSupplyFindManyArgs";
+import { ProductSupply } from "../../productSupply/base/ProductSupply";
 import { Manufacturer } from "../../manufacturer/base/Manufacturer";
 import { ProductService } from "../product.service";
 
@@ -157,6 +163,66 @@ export class ProductResolverBase {
       }
       throw error;
     }
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => [ProductOrder])
+  @nestAccessControl.UseRoles({
+    resource: "ProductOrder",
+    action: "read",
+    possession: "any",
+  })
+  async productOrders(
+    @graphql.Parent() parent: Product,
+    @graphql.Args() args: ProductOrderFindManyArgs
+  ): Promise<ProductOrder[]> {
+    const results = await this.service.findProductOrders(parent.id, args);
+
+    if (!results) {
+      return [];
+    }
+
+    return results;
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => [ProductStock])
+  @nestAccessControl.UseRoles({
+    resource: "ProductStock",
+    action: "read",
+    possession: "any",
+  })
+  async productStocks(
+    @graphql.Parent() parent: Product,
+    @graphql.Args() args: ProductStockFindManyArgs
+  ): Promise<ProductStock[]> {
+    const results = await this.service.findProductStocks(parent.id, args);
+
+    if (!results) {
+      return [];
+    }
+
+    return results;
+  }
+
+  @common.UseInterceptors(AclFilterResponseInterceptor)
+  @graphql.ResolveField(() => [ProductSupply])
+  @nestAccessControl.UseRoles({
+    resource: "ProductSupply",
+    action: "read",
+    possession: "any",
+  })
+  async productSupplies(
+    @graphql.Parent() parent: Product,
+    @graphql.Args() args: ProductSupplyFindManyArgs
+  ): Promise<ProductSupply[]> {
+    const results = await this.service.findProductSupplies(parent.id, args);
+
+    if (!results) {
+      return [];
+    }
+
+    return results;
   }
 
   @common.UseInterceptors(AclFilterResponseInterceptor)
