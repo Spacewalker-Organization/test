@@ -14,6 +14,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { ManufacturerWhereUniqueInput } from "../../manufacturer/base/ManufacturerWhereUniqueInput";
 import { ValidateNested, IsOptional, IsString } from "class-validator";
 import { Type } from "class-transformer";
+import { ProductOrderUpdateManyWithoutProductsInput } from "./ProductOrderUpdateManyWithoutProductsInput";
+import { ProductStockUpdateManyWithoutProductsInput } from "./ProductStockUpdateManyWithoutProductsInput";
+import { ProductSupplyUpdateManyWithoutProductsInput } from "./ProductSupplyUpdateManyWithoutProductsInput";
 @InputType()
 class ProductUpdateInput {
   @ApiProperty({
@@ -38,5 +41,41 @@ class ProductUpdateInput {
     nullable: true,
   })
   name?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductOrderUpdateManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductOrderUpdateManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductOrderUpdateManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productOrders?: ProductOrderUpdateManyWithoutProductsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductStockUpdateManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductStockUpdateManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductStockUpdateManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productStocks?: ProductStockUpdateManyWithoutProductsInput;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductSupplyUpdateManyWithoutProductsInput,
+  })
+  @ValidateNested()
+  @Type(() => ProductSupplyUpdateManyWithoutProductsInput)
+  @IsOptional()
+  @Field(() => ProductSupplyUpdateManyWithoutProductsInput, {
+    nullable: true,
+  })
+  productSupplies?: ProductSupplyUpdateManyWithoutProductsInput;
 }
 export { ProductUpdateInput };

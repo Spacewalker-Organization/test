@@ -10,7 +10,14 @@ https://docs.amplication.com/docs/how-to/custom-code
 ------------------------------------------------------------------------------
   */
 import { PrismaService } from "nestjs-prisma";
-import { Prisma, Product, Manufacturer } from "@prisma/client";
+import {
+  Prisma,
+  Product,
+  ProductOrder,
+  ProductStock,
+  ProductSupply,
+  Manufacturer,
+} from "@prisma/client";
 
 export class ProductServiceBase {
   constructor(protected readonly prisma: PrismaService) {}
@@ -45,6 +52,39 @@ export class ProductServiceBase {
     args: Prisma.SelectSubset<T, Prisma.ProductDeleteArgs>
   ): Promise<Product> {
     return this.prisma.product.delete(args);
+  }
+
+  async findProductOrders(
+    parentId: string,
+    args: Prisma.ProductOrderFindManyArgs
+  ): Promise<ProductOrder[]> {
+    return this.prisma.product
+      .findUnique({
+        where: { id: parentId },
+      })
+      .productOrders(args);
+  }
+
+  async findProductStocks(
+    parentId: string,
+    args: Prisma.ProductStockFindManyArgs
+  ): Promise<ProductStock[]> {
+    return this.prisma.product
+      .findUnique({
+        where: { id: parentId },
+      })
+      .productStocks(args);
+  }
+
+  async findProductSupplies(
+    parentId: string,
+    args: Prisma.ProductSupplyFindManyArgs
+  ): Promise<ProductSupply[]> {
+    return this.prisma.product
+      .findUnique({
+        where: { id: parentId },
+      })
+      .productSupplies(args);
   }
 
   async getManufacturer(parentId: string): Promise<Manufacturer | null> {

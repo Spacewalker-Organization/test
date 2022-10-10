@@ -12,6 +12,7 @@ model User {
   firstName String?
   id        String   @id @default(cuid())
   lastName  String?
+  orders    Order[]
   password  String
   roles     Json
   updatedAt DateTime @updatedAt
@@ -19,12 +20,15 @@ model User {
 }
 
 model Product {
-  createdAt      DateTime     @default(now())
-  id             String       @id @default(cuid())
-  manufacturer   Manufacturer @relation(fields: [manufacturerId], references: [id])
-  manufacturerId String
-  name           String?
-  updatedAt      DateTime     @updatedAt
+  createdAt       DateTime        @default(now())
+  id              String          @id @default(cuid())
+  manufacturer    Manufacturer    @relation(fields: [manufacturerId], references: [id])
+  manufacturerId  String
+  name            String?
+  productOrders   ProductOrder[]
+  productStocks   ProductStock[]
+  productSupplies ProductSupply[]
+  updatedAt       DateTime        @updatedAt
 }
 
 model Manufacturer {
@@ -33,4 +37,137 @@ model Manufacturer {
   name      String?
   products  Product[]
   updatedAt DateTime  @updatedAt
+}
+
+model Warehouse {
+  createdAt     DateTime       @default(now())
+  id            String         @id @default(cuid())
+  name          String?
+  productOrders ProductOrder[]
+  productStocks ProductStock[]
+  supplies      Supply[]
+  updatedAt     DateTime       @updatedAt
+}
+
+model Jobsite {
+  createdAt     DateTime       @default(now())
+  id            String         @id @default(cuid())
+  name          String?
+  orders        Order[]
+  productOrders ProductOrder[]
+  productStocks ProductStock[]
+  updatedAt     DateTime       @updatedAt
+}
+
+model Supplier {
+  createdAt       DateTime        @default(now())
+  id              String          @id @default(cuid())
+  name            String?
+  productOrders   ProductOrder[]
+  productSupplies ProductSupply[]
+  updatedAt       DateTime        @updatedAt
+}
+
+model Order {
+  createdAt     DateTime       @default(now())
+  deliverTo     Jobsite        @relation(fields: [deliverToId], references: [id])
+  deliverToId   String
+  id            String         @id @default(cuid())
+  productOrders ProductOrder[]
+  updatedAt     DateTime       @updatedAt
+  user          User           @relation(fields: [userId], references: [id])
+  userId        String
+}
+
+model ProductStock {
+  createdAt   DateTime   @default(now())
+  id          String     @id @default(cuid())
+  itemCount   Int?
+  jobsite     Jobsite?   @relation(fields: [jobsiteId], references: [id])
+  jobsiteId   String?
+  product     Product    @relation(fields: [productId], references: [id])
+  productId   String
+  updatedAt   DateTime   @updatedAt
+  warehouse   Warehouse? @relation(fields: [warehouseId], references: [id])
+  warehouseId String?
+}
+
+model ProductOrder {
+  createdAt   DateTime                     @default(now())
+  id          String                       @id @default(cuid())
+  itemCount   Int?
+  jobsite     Jobsite?                     @relation(fields: [jobsiteId], references: [id])
+  jobsiteId   String?
+  order       Order?                       @relation(fields: [orderId], references: [id])
+  orderId     String?
+  orderTracks OrderTrack[]
+  product     Product?                     @relation(fields: [productId], references: [id])
+  productId   String?
+  rentPrice   Float?
+  sourcedFrom EnumProductOrderSourcedFrom?
+  supplier    Supplier?                    @relation(fields: [supplierId], references: [id])
+  supplierId  String?
+  updatedAt   DateTime                     @updatedAt
+  warehouse   Warehouse?                   @relation(fields: [warehouseId], references: [id])
+  warehouseId String?
+}
+
+model OrderTrack {
+  createdAt      DateTime              @default(now())
+  id             String                @id @default(cuid())
+  productOrder   ProductOrder?         @relation(fields: [productOrderId], references: [id])
+  productOrderId String?
+  status         EnumOrderTrackStatus?
+  updatedAt      DateTime              @updatedAt
+}
+
+model Supply {
+  createdAt       DateTime        @default(now())
+  id              String          @id @default(cuid())
+  productSupplies ProductSupply[]
+  supplyTo        Warehouse?      @relation(fields: [supplyToId], references: [id])
+  supplyToId      String?
+  updatedAt       DateTime        @updatedAt
+}
+
+model ProductSupply {
+  createdAt    DateTime      @default(now())
+  id           String        @id @default(cuid())
+  price        Float?
+  product      Product?      @relation(fields: [productId], references: [id])
+  productId    String?
+  productCount Int?
+  supplier     Supplier?     @relation(fields: [supplierId], references: [id])
+  supplierId   String?
+  supply       Supply?       @relation(fields: [supplyId], references: [id])
+  supplyId     String?
+  supplyTracks SupplyTrack[]
+  updatedAt    DateTime      @updatedAt
+}
+
+model SupplyTrack {
+  createdAt       DateTime               @default(now())
+  id              String                 @id @default(cuid())
+  productsupply   ProductSupply?         @relation(fields: [productsupplyId], references: [id])
+  productsupplyId String?
+  status          EnumSupplyTrackStatus?
+  updatedAt       DateTime               @updatedAt
+}
+
+enum EnumProductOrderSourcedFrom {
+  Supplier
+  Jobsite
+  Warehouse
+}
+
+enum EnumOrderTrackStatus {
+  InTransit
+  Packed
+  Delivered
+  Dispatched
+}
+
+enum EnumSupplyTrackStatus {
+  InTransit
+  Delivered
 }

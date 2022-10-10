@@ -16,6 +16,9 @@ import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { ManufacturerWhereUniqueInput } from "../../manufacturer/base/ManufacturerWhereUniqueInput";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
+import { ProductOrderListRelationFilter } from "../../productOrder/base/ProductOrderListRelationFilter";
+import { ProductStockListRelationFilter } from "../../productStock/base/ProductStockListRelationFilter";
+import { ProductSupplyListRelationFilter } from "../../productSupply/base/ProductSupplyListRelationFilter";
 @InputType()
 class ProductWhereInput {
   @ApiProperty({
@@ -51,5 +54,41 @@ class ProductWhereInput {
     nullable: true,
   })
   name?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductOrderListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => ProductOrderListRelationFilter)
+  @IsOptional()
+  @Field(() => ProductOrderListRelationFilter, {
+    nullable: true,
+  })
+  productOrders?: ProductOrderListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductStockListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => ProductStockListRelationFilter)
+  @IsOptional()
+  @Field(() => ProductStockListRelationFilter, {
+    nullable: true,
+  })
+  productStocks?: ProductStockListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: () => ProductSupplyListRelationFilter,
+  })
+  @ValidateNested()
+  @Type(() => ProductSupplyListRelationFilter)
+  @IsOptional()
+  @Field(() => ProductSupplyListRelationFilter, {
+    nullable: true,
+  })
+  productSupplies?: ProductSupplyListRelationFilter;
 }
 export { ProductWhereInput };

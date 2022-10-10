@@ -14,6 +14,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsDate, IsString, ValidateNested, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
 import { Manufacturer } from "../../manufacturer/base/Manufacturer";
+import { ProductOrder } from "../../productOrder/base/ProductOrder";
+import { ProductStock } from "../../productStock/base/ProductStock";
+import { ProductSupply } from "../../productSupply/base/ProductSupply";
 @ObjectType()
 class Product {
   @ApiProperty({
@@ -50,6 +53,33 @@ class Product {
     nullable: true,
   })
   name!: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => [ProductOrder],
+  })
+  @ValidateNested()
+  @Type(() => ProductOrder)
+  @IsOptional()
+  productOrders?: Array<ProductOrder>;
+
+  @ApiProperty({
+    required: false,
+    type: () => [ProductStock],
+  })
+  @ValidateNested()
+  @Type(() => ProductStock)
+  @IsOptional()
+  productStocks?: Array<ProductStock>;
+
+  @ApiProperty({
+    required: false,
+    type: () => [ProductSupply],
+  })
+  @ValidateNested()
+  @Type(() => ProductSupply)
+  @IsOptional()
+  productSupplies?: Array<ProductSupply>;
 
   @ApiProperty({
     required: true,
